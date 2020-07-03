@@ -1,0 +1,63 @@
+// Variable Overrides 
+$theme-colors: (
+  "primary": #454545,
+  "secondary": #785964
+);
+
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+
+$footerCoolor : #D5C7BC;
+$h2_col : #93B7BE;
+
+body{
+    background-color: #D5C7BC;
+  }
+  
+  footer{
+    background-color:  $footerCoolor;
+  }
+  
+  .section1 h2, .section2 h2 {
+    background-color: $h2_col;
+  }
+  
+  a:link {
+    text-decoration: none;
+  }
+  .card:hover{
+    -webkit-box-shadow: 0px 0px 13px 4px rgba(69,69,69,1);
+    -moz-box-shadow: 0px 0px 13px 4px rgba(69,69,69,1);
+    box-shadow: 0px 0px 13px 4px rgba(69,69,69,1);
+  }
+  
+  .text{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 7; /* number of lines to show */
+    -webkit-box-orient: vertical;
+  }
+
+  .clanakTekst{
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  
+  .link1:hover{
+    border-top:1px solid white;
+  }
+  
+  .link2:hover{
+    border-bottom:1px solid white;
+  }
+  
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 0;
+    padding-left: 0;
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  
+  p.datum{
+    color: #b2b7bf;
+  }

@@ -1,0 +1,183 @@
+// Variable Overrides 
+$theme-colors: (
+  "primary": #454545,
+  "secondary": #785964
+);
+
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+
+$footerCoolor : #D5C7BC;
+$h2_col : #93B7BE;
+
+body{
+  background-color: #D5C7BC;
+}
+
+footer{
+  background-color:  $footerCoolor;
+}
+
+.section1 h2, .section2 h2 {
+  background-color: $h2_col;
+}
+
+a:link {
+  text-decoration: none;
+}
+.card:hover{
+  -webkit-box-shadow: 0px 0px 13px 4px rgba(69,69,69,1);
+  -moz-box-shadow: 0px 0px 13px 4px rgba(69,69,69,1);
+  box-shadow: 0px 0px 13px 4px rgba(69,69,69,1);
+}
+
+.slikaArtikl{
+  width:100%;
+  height:200px;
+}
+
+.text{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 7; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+.link1:hover{
+  border-top:1px solid white;
+}
+
+.link2:hover{
+  border-bottom:1px solid white;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding-right: 0;
+  padding-left: 0;
+  margin-left: .5rem;
+  margin-right: .5rem;
+}
+
+p.datum{
+  color: #b2b7bf;
+}
+
+.input-lg{
+  width: 100%;
+}
+
+.arhivaForma{
+  width: 100%;
+}
+
+.containerUnos{
+  width:100%;
+}
+
+.unosClanak{
+  margin: 0 auto;
+  background-color: #93b7be;
+  display: block;
+  width:60%;
+  border-radius: 20px;
+  color: white;
+  box-shadow: 5px 10px #888888;
+}
+
+.unosRegistracije{
+  margin: 200px auto;
+  background-color: #93b7be;
+  display: block;
+  width:60%;
+  border-radius: 20px;
+  color: white;
+  box-shadow: 5px 10px #888888;
+}
+
+.center{
+  width:50%;
+  margin:0 auto;
+}
+
+.centerInput{
+  width: 100%;
+}
+.centerInputTest{
+  display: block;
+  width:300px;
+  margin:0 auto;
+}
+
+.centerLabel{
+  width: 100%;
+  text-align: center;
+}
+.centerSelect{
+  display: block;
+  margin:0 auto;
+}
+.centerBotuni{
+  width:300px;
+  margin:0 auto;
+  text-align: center;
+}
+
+.uploadBotun{
+  text-align: center;
+}
+
+span.bojaPoruke{
+  color:red;
+}
+
+span#porukaKategorija{
+  display: block;
+  text-align: center;
+}
+
+span.center{
+  display: block;
+  text-align: center;
+}
+
+.wrapper{
+  position: relative;
+}
+
+.loginForm{
+  position:absolute;
+  top: 300px;
+  left: 40%;
+  right:50%;
+  
+}
+
+.kontejner{
+  width: 321px;
+}
+
+button#submitId{
+  text-align: center;
+}
+
+@media (max-width: 991px){
+  .slikaArtikl{
+    width:300px;
+    height:200px;
+  }
+
+  .nav-item{
+    width: 100%;
+  }
+  .unosClanak{
+    width:100%;
+  }
+}
+
+@media (max-width: 600px){
+  .unosRegistracije{
+  
+    width:100%;
+    
+  }
+}

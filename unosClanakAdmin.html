@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Tech Overview</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800">
+    <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+    <div class="container">
+        <div calss="row">
+            <div class="col-12 bg-primary">
+                <header>
+                    <h1 class="mb-0 text-white text-center">Tech Overview</h1>
+                </header>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="#navbarTogglerDemo02">
+
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link link1 " href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link2" href="kategorijaMobiteliAdmin.php">Mobiteli</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link1" href="kategorijaKonzoleAdmin.php">Konzole</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link2" href="administracija.php">Administracija</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link1" href="unosClanakAdmin.html">Unos novog članka</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <section class="sectionUnosClanak mt-5">
+            <div class="row">
+                <div class="col-md containerUnos">
+                    <div class="unosClanak">
+                        <form enctype="multipart/form-data" class="formaUnosClanak" action="skripta.php" method="POST">
+                            <div class="form-item center"><label for="title" class="centerLabel">Naslov vijesti</label>
+                                <div class="form-field"> <input type="text" name="title" id="title"
+                                        class="form-field-textual centerInput"><span id="porukaTitle"
+                                        class="bojaPoruke"></span> </div>
+                            </div>
+                            <div class="form-item"> <label for="about" class="centerLabel">Kratki sadržaj vijesti</label>
+                                <div class="form-field"> <textarea name="about" id="about" cols="30" rows="10"
+                                        class="form-field-textual centerInput"></textarea>
+                                    <span id="porukaAbout" class="bojaPoruke"></span> </div>
+                            </div>
+                            <div class="form-item"> <label for="content" class="centerLabel">Sadržaj vijesti</label>
+                                <div class="form-field"> <textarea name="content" id="content" cols="30" rows="10"
+                                        class="form-field-textual centerInput"></textarea>
+                                    <span id="porukaContent" class="bojaPoruke"></span> </div>
+                            </div>
+                            <div class="form-item"> <label for="pphoto" class="centerLabel">Slika: </label>
+                                <div class="form-field centerBotuni"> <input type="file" class="input-text uploadBotun"
+                                        id="pphoto" name="pphoto" /><span id="porukaSlika" class="bojaPoruke"></span>
+                                </div>
+                            </div>
+                            <div class="form-item"> <label for="category" class="centerLabel">Kategorija vijesti</label>
+                                <div class="form-field"> <select name="category" id="category"
+                                        class="form-field-textual centerSelect">
+                                        <option value="" disabled selected>Odabir kategorije</option>
+                                        <option value="mobiteli">Mobiteli</option>
+                                        <option value="konzole">Konzole</option>
+                                    </select><span id="porukaKategorija" class="bojaPoruke"></span> </div>
+                            </div>
+                            <div class="form-item"> <label class="centerLabel">Spremiti u arhivu: <div
+                                        class="form-field"> <input type="checkbox" name="archive" id="archive"> </div>
+                                </label> </div>
+                            <div class="form-item centerBotuni"> <button type="reset" value="Poništi">Poništi</button>
+                                <button type="submit" value="Prihvati" id="slanje" name="unos">Prihvati</button> </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="blockquote-footer text-center pb-3 mt-3">
+            <div class="row">
+                <div class="col-12">
+                    @Copyright by Antonijo Ćosić
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script type="text/javascript">
+        document.getElementById("slanje").onclick = function (event) {
+            var slanjeForme = true;
+            // Naslov vijesti (5-30 znakova) 
+            var poljeTitle = document.getElementById("title");
+            var title = document.getElementById("title").value;
+            if (title.length < 5 || title.length > 30) {
+                slanjeForme = false;
+                poljeTitle.style.border = "2px dotted red";
+                document.getElementById("porukaTitle").innerHTML = "Naslov vijesti mora imati između 5 i 30 znakova!<br>";
+            }
+            else {
+                poljeTitle.style.border = "3px solid #42f548";
+                document.getElementById("porukaTitle").innerHTML = "";
+            }
+            // Kratki sadržaj (10-1000 znakova)
+            var poljeAbout = document.getElementById("about");
+            var about = document.getElementById("about").value;
+            if (about.length < 10 || about.length > 1000) {
+                slanjeForme = false;
+                poljeAbout.style.border = "2px dotted red";
+                document.getElementById("porukaAbout").innerHTML = "Kratki sadržaj mora imati između 10 i 500 znakova!<br>";
+            } else {
+                poljeAbout.style.border = "3px solid #42f548";
+                document.getElementById("porukaAbout").innerHTML = "";
+            }
+            // Sadržaj mora biti unesen 
+            var poljeContent = document.getElementById("content");
+            var content = document.getElementById("content").value;
+            if (content.length == 0) {
+                slanjeForme = false;
+                poljeContent.style.border = "2px dotted red";
+                document.getElementById("porukaContent").innerHTML = "Sadržaj mora biti unesen!<br>";
+            } else {
+                poljeContent.style.border = "3px solid #42f548";
+                document.getElementById("porukaContent").innerHTML = "";
+            } // Slika mora biti unesena
+            var poljeSlika = document.getElementById("pphoto");
+            var pphoto = document.getElementById("pphoto").value;
+            if (pphoto.length == 0) {
+                slanjeForme = false;
+                poljeSlika.style.border = "2px dotted red";
+                document.getElementById("porukaSlika").innerHTML = "Slika mora biti unesena!<br>";
+            } else {
+                poljeSlika.style.border = "3px solid #42f548";
+                document.getElementById("porukaSlika").innerHTML = "";
+            } // Kategorija mora biti odabrana
+            var poljeCategory = document.getElementById("category");
+            if (document.getElementById("category").selectedIndex == 0) {
+                slanjeForme = false;
+                poljeCategory.style.border = "2px dotted red";
+                document.getElementById("porukaKategorija").innerHTML = "Kategorija mora biti odabrana!<br>";
+            } else {
+                poljeCategory.style.border = "3px solid #42f548";
+                document.getElementById("porukaKategorija").innerHTML = "";
+            }
+            if (slanjeForme != true) {
+                event.preventDefault();
+            }
+        };
+    </script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
